@@ -1,6 +1,19 @@
 import os, sys, re, argparse
 from PIL import Image
 
+# https://pillow.readthedocs.io/en/stable/handbook/tutorial.html
+
+def convert2jpg():
+    for infile in sys.argv[1:]:
+        f, e = os.path.splitext(infile)
+        outfile = f + ".jpg"
+        if infile != outfile:
+            try:
+                with Image.open(infile) as im:
+                    im.save(outfile)
+            except OSError:
+                print("cannot convert", infile)
+
 def remove_exif(path:str, replace:bool = False):
     """
     suppprted extensions include: [ jpg, jpeg, png, raw ]
