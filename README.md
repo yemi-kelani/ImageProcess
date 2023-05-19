@@ -9,6 +9,9 @@ Removes exif data from images and optionally replaces them. Suppprted extensions
 
 `pip install -r requirements.txt`
 
+
 `python3 process_image.py <PATH_TO_IMAGE_FOLDER>`
+
 `python3 process_image.py <PATH_TO_IMAGE_FOLDER> -r <True | False>`
+
 `python3 process_image.py <PATH_TO_IMAGE_FOLDER> --replace <True | False>`
